@@ -3,6 +3,8 @@ plugins {
     id("com.android.library")
 }
 
+version = "1.0.0"
+
 kotlin {
     android {
         compilations.all {
@@ -57,5 +59,12 @@ android {
     compileSdk = 33
     defaultConfig {
         minSdk = 23
+    }
+
+    publishing {
+        singleVariant("release") {
+            withSourcesJar()
+            withJavadocJar()
+        }
     }
 }
